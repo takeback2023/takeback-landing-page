@@ -1,4 +1,9 @@
 import { useEffect, useRef } from 'react'
+import card1 from '/assets/Card1.jpeg'
+import card2 from '/assets/Card2.jpeg'
+import card3 from '/assets/Card3.jpeg'
+import card4 from '/assets/Card4.jpeg'
+
 
 const cards = [
   {
@@ -10,7 +15,7 @@ const cards = [
     label: 'Borrow',
     shadow: '0 32px 64px rgba(0,0,0,0.22)',
     z: 3,
-    image: '/assets/Card1.jpeg',
+    image: card1,
   },
   {
     w: 210,
@@ -21,7 +26,7 @@ const cards = [
     label: 'Return anywhere',
     shadow: '0 20px 40px rgba(0,0,0,0.16)',
     z: 4,
-    image: '/assets/Card3.jpeg',
+    image: card3,
   },
   {
     w: 168,
@@ -32,7 +37,7 @@ const cards = [
     label: 'Instant cashback',
     shadow: '0 14px 28px rgba(0,0,0,0.12)',
     z: 2,
-    image: '/assets/Card2.jpeg',
+    image: card2,
   },
   {
     w: 148,
@@ -43,7 +48,7 @@ const cards = [
     label: 'Eco friendly',
     shadow: '0 14px 28px rgba(0,0,0,0.18)',
     z: 2,
-    image: '/assets/Card4.jpeg',
+    image: card4,
   },
 ]
 
