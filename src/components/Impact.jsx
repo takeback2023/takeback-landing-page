@@ -23,7 +23,7 @@ export default function Impact() {
         maxWidth:900,margin:'0 auto',
         background:'rgba(255,255,255,0.06)',borderRadius:20,overflow:'hidden',
         border:'1px solid rgba(255,255,255,0.1)',
-      }}>
+      }} className="impact-grid">
         {stats.map((s,i) => (
           <div key={i} style={{padding:'40px 24px',textAlign:'center',transition:'background 0.2s',cursor:'default',borderRight:i<3?'1px solid rgba(255,255,255,0.08)':'none'}}
             onMouseEnter={e=>e.currentTarget.style.background='rgba(255,255,255,0.05)'}
@@ -33,6 +33,18 @@ export default function Impact() {
           </div>
         ))}
       </div>
+      <style>{`
+        @media(max-width:768px){
+          #impact { padding: 80px 24px !important; }
+          .impact-grid { grid-template-columns: repeat(2,1fr) !important; border-radius: 16px !important; }
+          .impact-grid > div { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.08) !important; }
+          .impact-grid > div:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.08) !important; }
+          .impact-grid > div:nth-last-child(-n+2) { border-bottom: none !important; }
+        }
+        @media(max-width:480px){
+          #impact { padding: 80px 20px !important; }
+        }
+      `}</style>
     </section>
   )
 }

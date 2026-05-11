@@ -1,9 +1,9 @@
 import { useReveal } from '../hooks/useReveal'
 
 const steps = [
-  { num:'1', title:'Scan & Borrow', desc:'Find the code on any Takeback cup, enter it on our platform, sign in with Google and pay ₹150 from your wallet.', tag:'No app needed' },
+  { num:'1', title:'Scan & Borrow', desc:'Find the code on any Takeback cup, enter it on our platform, sign in with Google and load your wallet to borrow.', tag:'No app needed' },
   { num:'2', title:'Enjoy Your Drink', desc:'Use the cup wherever you go. Durable, clean and professionally washed before every use.', tag:'Premium quality' },
-  { num:'3', title:'Return & Earn', desc:'Return any Takeback cup at any partner location. Scan the QR, confirm — and get ₹50 added to your wallet instantly.', tag:'₹50 cashback' },
+  { num:'3', title:'Return & Earn', desc:'Return any Takeback cup at any partner location. Scan the QR, confirm — and get cashback added to your wallet instantly.', tag:'Instant cashback' },
 ]
 
 export default function HowItWorks() {
@@ -16,8 +16,8 @@ export default function HowItWorks() {
           Three steps to a cleaner world
         </h2>
       </div>
-      <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:32,maxWidth:960,margin:'0 auto',position:'relative'}}>
-        <div style={{position:'absolute',top:40,left:'calc(16.66% + 20px)',right:'calc(16.66% + 20px)',height:1,background:'rgba(26,58,36,0.1)'}}/>
+      <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:32,maxWidth:960,margin:'0 auto',position:'relative'}} className="how-grid">
+        <div className="how-connector" style={{position:'absolute',top:40,left:'calc(16.66% + 20px)',right:'calc(16.66% + 20px)',height:1,background:'rgba(26,58,36,0.1)'}}/>
         {steps.map((s,i) => (
           <div key={i} style={{textAlign:'center',position:'relative',zIndex:1}}>
             <div style={{
@@ -38,6 +38,13 @@ export default function HowItWorks() {
           </div>
         ))}
       </div>
+      <style>{`
+        @media(max-width:768px){
+          #how { padding: 80px 24px !important; }
+          .how-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+          .how-connector { display: none !important; }
+        }
+      `}</style>
     </section>
   )
 }

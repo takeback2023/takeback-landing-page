@@ -13,7 +13,7 @@ const cards = [
   },
   {
     w:168,h:190,bg:'linear-gradient(135deg,#c7efd4,#52b788)',
-    bottom:30,left:10,rotate:-4,label:'₹50 back',icon:'💸',
+    bottom:30,left:10,rotate:-4,label:'Eco friendly',icon:'💸',
     shadow:'0 14px 28px rgba(0,0,0,0.12)',z:2,iconColor:'rgba(26,58,36,0.18)',
   },
   {
@@ -69,7 +69,7 @@ export default function Hero() {
         maxWidth:1200,margin:'0 auto',width:'100%',
         display:'grid',gridTemplateColumns:'1fr 1fr',
         gap:40,alignItems:'center',
-      }}>
+      }} className="hero-grid">
 
         {/* LEFT TEXT */}
         <div>
@@ -86,7 +86,7 @@ export default function Hero() {
 
           <h1 style={{
             fontFamily:"'Fraunces',serif",
-            fontSize:'clamp(56px,7.5vw,96px)',
+            fontSize:'clamp(48px,7.5vw,96px)',
             fontWeight:700,lineHeight:0.95,
             letterSpacing:'-3px',color:'#1a3a24',
             marginBottom:32,
@@ -101,7 +101,7 @@ export default function Hero() {
             fontSize:16,color:'#5a7063',fontWeight:300,
             maxWidth:380,lineHeight:1.75,marginBottom:40,
           }}>
-            Borrow a reusable cup for ₹150. Return any cup anywhere and get ₹50 back instantly. No app needed — just scan and go.
+            Borrow a reusable cup, enjoy your drink, and return it at any partner location. No app needed — just scan and go.
           </p>
 
           <div style={{display:'flex',gap:14,flexWrap:'wrap',marginBottom:36}}>
@@ -133,7 +133,7 @@ export default function Hero() {
           </div>
 
           <div style={{display:'flex',gap:8,flexWrap:'wrap'}}>
-            {['10,000+ cups','1,050+ members','₹50 cashback'].map(stat => (
+            {['10,000+ cups','1,050+ members','Instant cashback'].map(stat => (
               <span key={stat} style={{
                 background:'#d8f3dc',color:'#2d6a4f',
                 padding:'6px 14px',borderRadius:100,
@@ -144,7 +144,7 @@ export default function Hero() {
         </div>
 
         {/* RIGHT COLLAGE */}
-        <div ref={collageRef} style={{position:'relative',height:520,width:'100%'}}>
+        <div ref={collageRef} className="hero-collage" style={{position:'relative',height:520,width:'100%'}}>
           {cards.map((c,i) => (
             <div key={i} className="card" style={{
               position:'absolute',
@@ -199,9 +199,14 @@ export default function Hero() {
       <style>{`
         @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
         @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(5px)} }
-        @media(max-width:768px){
-          section { padding: 90px 20px 60px !important; }
-          section > div > div { grid-template-columns: 1fr !important; }
+        @media(max-width:900px){
+          section { padding: 90px 32px 60px !important; }
+          .hero-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+          .hero-collage { height: 320px !important; }
+        }
+        @media(max-width:480px){
+          section { padding: 80px 20px 60px !important; }
+          .hero-collage { height: 260px !important; }
         }
       `}</style>
     </section>

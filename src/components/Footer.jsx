@@ -16,7 +16,7 @@ export default function Footer() {
           </div>
           <div style={{display:'flex',gap:32,flexWrap:'wrap'}}>
             {[['how','How it works'],['impact','Our impact'],['why','Why Takeback'],['instagram','Community'],['connect','Contact']].map(([id,label])=>(
-              <span key={id} onClick={()=>scrollTo(id)} style={{fontSize:13,color:'rgba(255,255,255,0.45)',cursor:'pointer',transition:'color 0.2s',textDecoration:'none'}}
+              <span key={id} onClick={()=>scrollTo(id)} style={{fontSize:13,color:'rgba(255,255,255,0.45)',cursor:'pointer',transition:'color 0.2s'}}
                 onMouseEnter={e=>e.target.style.color='#fff'}
                 onMouseLeave={e=>e.target.style.color='rgba(255,255,255,0.45)'}>
                 {label}
@@ -26,9 +26,21 @@ export default function Footer() {
         </div>
         <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:12,marginTop:24,fontSize:12}}>
           <span>© 2025 Takeback. All rights reserved.</span>
+          <a href="https://www.instagram.com/gotakeback/" target="_blank" rel="noopener noreferrer" style={{color:'rgba(255,255,255,0.4)',textDecoration:'none',transition:'color 0.2s'}}
+            onMouseEnter={e=>e.target.style.color='#52b788'}
+            onMouseLeave={e=>e.target.style.color='rgba(255,255,255,0.4)'}>
+            @gotakeback
+          </a>
           <span style={{color:'rgba(255,255,255,0.25)'}}>Made with 🍃 in India</span>
         </div>
       </div>
+      <style>{`
+        @media(max-width:640px){
+          footer { padding: 40px 20px 24px !important; }
+          footer > div > div:first-child { flex-direction: column; gap: 16px !important; }
+          footer > div > div:first-child > div:last-child { gap: 20px !important; }
+        }
+      `}</style>
     </footer>
   )
 }

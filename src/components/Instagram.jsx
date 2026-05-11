@@ -16,9 +16,9 @@ export default function Instagram() {
         <h2 style={{fontFamily:"'Fraunces',serif",fontSize:'clamp(28px,4vw,44px)',fontWeight:600,lineHeight:1.1,letterSpacing:'-1px',color:'#1a3a24',maxWidth:400,margin:'0 auto 16px'}}>
           Follow our journey
         </h2>
-        <p style={{fontSize:15,color:'#5a7063',fontWeight:300}}>Tag us at <strong style={{color:'#2d6a4f'}}>@takeback.india</strong> when you borrow or return</p>
+        <p style={{fontSize:15,color:'#5a7063',fontWeight:300}}>Tag us at <strong style={{color:'#2d6a4f'}}>@gotakeback</strong> when you borrow or return</p>
       </div>
-      <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:12,maxWidth:880,margin:'0 auto 40px'}}>
+      <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:12,maxWidth:880,margin:'0 auto 40px'}} className="insta-grid">
         {placeholders.map((p,i) => (
           <div key={i} style={{
             aspectRatio:'1',borderRadius:16,background:p.bg,
@@ -33,7 +33,7 @@ export default function Instagram() {
         ))}
       </div>
       <div style={{textAlign:'center'}}>
-        <a href="https://instagram.com" target="_blank" rel="noopener" style={{
+        <a href="https://www.instagram.com/gotakeback/" target="_blank" rel="noopener noreferrer" style={{
           display:'inline-flex',alignItems:'center',gap:8,
           background:'#1a3a24',color:'#fff',
           padding:'14px 28px',borderRadius:100,
@@ -50,6 +50,15 @@ export default function Instagram() {
           Follow on Instagram
         </a>
       </div>
+      <style>{`
+        @media(max-width:768px){
+          #instagram { padding: 80px 24px !important; }
+          .insta-grid { grid-template-columns: repeat(2,1fr) !important; }
+        }
+        @media(max-width:480px){
+          #instagram { padding: 80px 20px !important; }
+        }
+      `}</style>
     </section>
   )
 }

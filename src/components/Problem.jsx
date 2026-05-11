@@ -2,8 +2,8 @@ import { useReveal } from '../hooks/useReveal'
 
 const problems = [
   { icon:'🌍', title:'15 billion cups wasted yearly', desc:'India generates staggering cup waste annually — the vast majority ending up in landfills or waterways.' },
-  { icon:'⏳', title:'30 years to decompose', desc:'A single disposable cup takes three decades to break down. The coffee is gone in minutes — the damage lasts decades.' },
-  { icon:'♻️', title:'Less than 1% recycled', desc:'The plastic lining makes most paper cups unrecyclable. They look green — they\'re not.' },
+  { icon:'⏳', title:'30 years to decompose', desc:"A single disposable cup takes three decades to break down. The coffee is gone in minutes — the damage lasts decades." },
+  { icon:'♻️', title:'Less than 1% recycled', desc:"The plastic lining makes most paper cups unrecyclable. They look green — they're not." },
 ]
 
 export default function Problem() {
@@ -15,7 +15,7 @@ export default function Problem() {
         display:'grid',gridTemplateColumns:'1fr 1fr',gap:72,alignItems:'center',
         opacity: visible?1:0, transform: visible?'none':'translateY(28px)',
         transition:'all 0.8s ease',
-      }}>
+      }} className="problem-grid">
         <div>
           <span style={{fontSize:11,fontWeight:600,letterSpacing:2,textTransform:'uppercase',color:'#52b788',display:'block',marginBottom:16}}>The problem</span>
           <h2 style={{fontFamily:"'Fraunces',serif",fontSize:'clamp(32px,4vw,48px)',fontWeight:600,lineHeight:1.1,letterSpacing:'-1px',color:'#1a3a24',marginBottom:20}}>
@@ -31,7 +31,6 @@ export default function Problem() {
               background:'#faf7f2',border:'1px solid rgba(26,58,36,0.1)',borderRadius:16,
               padding:'24px',display:'flex',gap:20,alignItems:'flex-start',
               transition:'all 0.2s',cursor:'default',
-              transitionDelay:`${i*0.1}s`,
             }}
             onMouseEnter={e=>{e.currentTarget.style.transform='translateY(-2px)';e.currentTarget.style.borderColor='#52b788'}}
             onMouseLeave={e=>{e.currentTarget.style.transform='none';e.currentTarget.style.borderColor='rgba(26,58,36,0.1)'}}>
@@ -44,6 +43,15 @@ export default function Problem() {
           ))}
         </div>
       </div>
+      <style>{`
+        @media(max-width:900px){
+          section { padding: 80px 32px !important; }
+          .problem-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+        }
+        @media(max-width:480px){
+          section { padding: 80px 20px !important; }
+        }
+      `}</style>
     </section>
   )
 }

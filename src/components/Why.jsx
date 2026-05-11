@@ -1,12 +1,12 @@
 import { useReveal } from '../hooks/useReveal'
 
 const cards = [
-  { icon:'💸', title:'Earn while you help the planet', desc:'Get ₹50 cashback every time you return a cup. Sustainability that actually rewards you.', dark:true },
+  { icon:'💸', title:'Earn while you help the planet', desc:'Get cashback every time you return a cup. Sustainability that actually rewards you.', dark:true },
   { icon:'📱', title:'No app needed — ever', desc:'Enter the cup code on our website, sign in with Google. Works on any phone or browser. Zero friction.' },
-  { icon:'🔄', title:'Return anywhere, anytime', desc:'You don\'t have to return where you borrowed. Any partner location accepts any Takeback cup.' },
+  { icon:'🔄', title:'Return anywhere, anytime', desc:"You don't have to return where you borrowed. Any partner location accepts any Takeback cup." },
   { icon:'✨', title:'Cleaner than disposables', desc:'Every Takeback cup is professionally washed and sanitised before each use — cleaner than a paper cup.' },
   { icon:'🌱', title:'Real environmental impact', desc:'With 10,000+ cups in circulation, the collective impact adds up fast. We track every cup saved.' },
-  { icon:'🔒', title:'Secure & instant payments', desc:'Wallet recharge via UPI, cards and netbanking. Your ₹50 cashback hits your wallet immediately.' },
+  { icon:'🔒', title:'Secure & instant payments', desc:'Wallet recharge via UPI, cards and netbanking. Your cashback hits your wallet immediately.' },
 ]
 
 export default function Why() {
@@ -19,7 +19,7 @@ export default function Why() {
           Why you'll love Takeback
         </h2>
       </div>
-      <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:24,maxWidth:1100,margin:'0 auto'}}>
+      <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:24,maxWidth:1100,margin:'0 auto'}} className="why-grid">
         {cards.map((c,i) => (
           <div key={i} style={{
             padding:36,borderRadius:20,
@@ -35,6 +35,16 @@ export default function Why() {
           </div>
         ))}
       </div>
+      <style>{`
+        @media(max-width:900px){
+          #why { padding: 80px 32px !important; }
+          .why-grid { grid-template-columns: repeat(2,1fr) !important; }
+        }
+        @media(max-width:540px){
+          #why { padding: 80px 20px !important; }
+          .why-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </section>
   )
 }

@@ -11,3 +11,13 @@
 }
 html { scroll-behavior: smooth; }
 body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+
+input, select, textarea, button {
+  font-family: 'DM Sans', sans-serif;
+}
+
+img { max-width: 100%; }
+
+@media(max-width: 768px) {
+  body { font-size: 15px; }
+}

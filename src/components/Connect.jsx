@@ -20,10 +20,11 @@ export default function Connect() {
     borderRadius:12,color:'#fff',
     fontFamily:"'DM Sans',sans-serif",fontSize:14,
     outline:'none',transition:'border-color 0.2s',
+    boxSizing:'border-box',
   }
 
   const details = [
-    { icon:'📸', label:'Instagram', val:'@takeback.india' },
+    { icon:'📸', label:'Instagram', val:'@gotakeback' },
     { icon:'✉️', label:'Email', val:'hello@takeback.in' },
     { icon:'📍', label:'Location', val:'India — expanding city by city' },
   ]
@@ -37,7 +38,7 @@ export default function Connect() {
           Connect with us
         </h2>
       </div>
-      <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:64,maxWidth:1000,margin:'0 auto',alignItems:'start'}}>
+      <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:64,maxWidth:1000,margin:'0 auto',alignItems:'start'}} className="connect-grid">
         <div>
           <h3 style={{fontFamily:"'Fraunces',serif",fontSize:24,fontWeight:600,color:'#fff',marginBottom:16,lineHeight:1.3}}>
             Whether you're curious, a café owner, or just want to say hi — we'd love to hear from you.
@@ -64,7 +65,7 @@ export default function Connect() {
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
-              <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:14,marginBottom:14}}>
+              <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:14,marginBottom:14}} className="form-row">
                 {[['name','Your name','Rahul Sharma','text'],['email','Email address','rahul@gmail.com','email']].map(([k,l,ph,t])=>(
                   <div key={k}>
                     <label style={{display:'block',fontSize:12,fontWeight:500,color:'rgba(255,255,255,0.6)',marginBottom:7}}>{l}</label>
@@ -107,6 +108,16 @@ export default function Connect() {
           )}
         </div>
       </div>
+      <style>{`
+        @media(max-width:900px){
+          #connect { padding: 80px 32px !important; }
+          .connect-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+        }
+        @media(max-width:480px){
+          #connect { padding: 80px 20px !important; }
+          .form-row { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </section>
   )
 }
