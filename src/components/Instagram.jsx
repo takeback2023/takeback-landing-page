@@ -1,8 +1,8 @@
 import { useReveal } from '../hooks/useReveal'
-import img1 from '/Users/pratyushchouksey/Downloads/takeback-landing/assets/img7.jpeg'
-import img2 from '/Users/pratyushchouksey/Downloads/takeback-landing/assets/img5.jpeg'
-import img3 from '/Users/pratyushchouksey/Downloads/takeback-landing/assets/img6.jpeg'
-import img4 from '/Users/pratyushchouksey/Downloads/takeback-landing/assets/img10.jpeg'
+import img1 from "/assets/img7.jpeg"
+import img2 from "/assets/img5.jpeg"
+import img3 from "/assets/img6.jpeg"
+import img4 from "/assets/img10.jpeg"
 
 const posts = [img1, img2, img3, img4]
 
