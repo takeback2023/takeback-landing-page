@@ -1,0 +1,13 @@
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --green: #1a3a24;
+  --green-mid: #2d6a4f;
+  --green-bright: #52b788;
+  --green-pale: #d8f3dc;
+  --cream: #faf7f2;
+  --text: #0f1a12;
+  --muted: #5a7063;
+  --border: rgba(26,58,36,0.12);
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
