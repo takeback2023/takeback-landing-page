@@ -25,7 +25,7 @@ export default function Connect() {
 
   const details = [
     { icon:'📸', label:'Instagram', val:'@gotakeback' },
-    { icon:'✉️', label:'Email', val:'hello@takeback.in' },
+    { icon:'✉️', label:'Email', val:'	takeback2023@gmail.com' },
     { icon:'📍', label:'Location', val:'India — expanding city by city' },
   ]
 
